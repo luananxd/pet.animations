@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../css/index.css" rel="stylesheet" />
+    <link href="../css/pages/interactive-button.css" rel="stylesheet" />
+    <title>Text scroll</title>
+  </head>
+
+  <body class="page">
+    <a href="../index.html" class="page__back">Back</a>
+    <h1 class="main-page__title">Interactive button</h1>
+
+    <div class="page__content">
+      <form class="form">
+        <h2 class="form__title">Login form</h2>
+        <div class="form__controls">
+          <input class="form__login" type="username" placeholder="Your login">
+          <input class="form__password" type="password" placeholder="Your password">
+        </div>
+
+        <div class="form__buttons">
+          <button class="form__submit" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="20px" height="20px" fill="currentColor">
+              <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
+            </svg>
+            <span>Login</span>
+          </button>
+          <a href="../index.html" class="form__back">Back to main</a>
+        </div>
+      </form>
+    </div>
+  </body>
+
+  <script src="../js/interactive-button.js" type="module"></script>
+</html>

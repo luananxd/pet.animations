@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "Kamerik";
+  src: url("../../assets/parallax-2/fonts/kamerik205-heavy.woff2");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Merriweather";
+  src: url("../../assets/parallax-2/fonts/merriweather-regular-italic.woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --transition: 1s cubic-bezier(0.05, 0.5, 0, 1);
+}
+
+.parallax {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: darkolivegreen;
+  border-radius: var(--border-l);
+  overflow: hidden;
+}
+
+.parallax__logo {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 196px;
+  height: 150px;
+  background-image: url("../../assets/parallax-2/logo.svg");
+}
+
+.parallax__title {
+  font-family: "Kamerik", "Arial", sans-serif;
+  font-weight: 900;
+  font-size: 60px;
+  text-align: center;
+  color: var(--white);
+}
+
+.parallax__subtitle {
+  font-family: "Merriweather", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+  color: var(--white);
+}
+
+.layers {
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.layers__container {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+  transition: transform var(--transition);
+  will-change: transform;
+}
+
+.layers__layer {
+  position: absolute;
+  inset: -10vh;
+  background-size: cover;
+  background-position: center center;
+}
+
+.layers__layer--1 {
+  transform: translateZ(-40px) scale(1.1);
+  background-image: url("../../assets/parallax-2/layer-1.jpg");
+}
+
+.layers__layer--2 {
+  transform: translateZ(80px) scale(0.9);
+  background-image: url("../../assets/parallax-2/layer-2.png");
+}
+
+.layers__layer--3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(180px) scale(0.85);
+}
+
+.layers__layer--4 {
+  transform: translateZ(190px) scale(0.8);
+  pointer-events: none;
+}
+
+.layers__layer--5 {
+  transform: translateZ(300px) scale(0.75);
+  background-image: url("../../assets/parallax-2/layer-5.png");
+  pointer-events: none;
+}
+
+.layers__layer--6 {
+  transform: translateZ(380px) scale(0.7);
+  background-image: url("../../assets/parallax-2/layer-6.png");
+  pointer-events: none;
+}

@@ -1,0 +1,78 @@
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 30deg;
+}
+
+.pacman {
+  height: 500px;
+  position: relative;
+  background-color: black;
+  border-radius: 16px;
+}
+
+.pacman__body {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 35%;
+  translate: 0 -50%;
+  width: 150px;
+  height: 150px;
+  background-image: conic-gradient(
+    from 90deg, 
+    transparent 0deg, 
+    transparent var(--angle), 
+    gold var(--angle), 
+    gold calc(360deg - var(--angle)), 
+    transparent calc(360deg - var(--angle)));
+  border-radius: 50%;
+  animation: 600ms pacman linear infinite;
+}
+
+.pacman__dots {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: flex;
+  gap: 30px;
+  width: 390px;
+  overflow: hidden;
+}
+
+.pacman__dots div {
+  display: flex;
+  gap: 30px;
+  animation: 2s dots linear infinite;
+}
+
+.pacman__dot {
+  width: 30px;
+  height: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+@keyframes dots {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(calc(-100% - 30px));
+  }
+}
+
+@keyframes pacman {
+  0% {
+    --angle: 0deg;
+  }
+  50% {
+    --angle: 60deg;
+  }
+  100% {
+    --angle: 0deg;
+  }
+}

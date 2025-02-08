@@ -1,0 +1,121 @@
+:root {
+  --animation-duration: 7s;
+}
+
+
+.scroll-text.example-1 {
+  margin-bottom: 50px;
+}
+
+.example-1 .scroll-text__inner {
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+}
+
+.example-1 .scroll-text__word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.example-1 .scroll-text__word:nth-of-type(1) {
+  transform: translateY(0%);
+  animation: var(--animation-duration) slide-1 infinite;
+  animation-delay: 0s;
+  color: royalblue;
+}
+
+.example-1 .scroll-text__word:nth-of-type(2) {
+  transform: translateY(-100%);
+  animation: var(--animation-duration) slide-1 infinite;
+  animation-delay: calc(var(--animation-duration) * 0.2);
+  color: coral;
+}
+
+.example-1 .scroll-text__word:nth-of-type(3) {
+  transform: translateY(-100%);
+  animation: var(--animation-duration) slide-1 infinite;
+  animation-delay: calc(var(--animation-duration) * 0.4);
+  color: gold;
+}
+
+.example-1 .scroll-text__word:nth-of-type(4) {
+  transform: translateY(-100%);
+  animation: var(--animation-duration) slide-1 infinite;
+  animation-delay: calc(var(--animation-duration) * 0.6);
+  color: limegreen;
+}
+
+.example-1 .scroll-text__word:nth-of-type(5) {
+  transform: translateY(-100%);
+  animation: var(--animation-duration) slide-1 infinite;
+  animation-delay: calc(var(--animation-duration) * 0.8);
+  color: mediumslateblue;
+}
+
+@keyframes slide-1 {
+  0% {
+    transform: translateY(-100%);
+  }
+  6% {
+    transform: translateY(0%);
+  }
+  14% {
+    transform: translateY(0%);
+  }
+  20% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.example-2.scroll-text {
+  display: flex;
+  gap: 15px;
+}
+
+.example-2 .scroll-text__inner {
+  position: relative;
+  width: 400px;
+  height: 60px;
+  overflow: hidden;
+}
+
+.example-2 .scroll-text__main {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.example-2 .scroll-text__word {
+  position: absolute;
+  opacity: 0;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.example-2 .scroll-text__letter {
+  display: inline-block;
+  transform-origin: center center;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+  transform: rotateX(-90deg);
+}
+
+.example-2 .scroll-text__letter.behind {
+  transform: rotateX(-90deg);
+}
+
+.example-2 .scroll-text__letter.in {
+  transform: rotateX(0deg);
+}
+
+.example-2 .scroll-text__letter.out {
+  transform: rotateX(90deg);
+}

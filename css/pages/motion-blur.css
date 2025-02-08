@@ -1,0 +1,199 @@
+:root {
+  --box-width: 200px;
+  --ball-width: 30px;
+  --shadow-width: 20px;
+  --ball-offset: calc(var(--box-width) - var(--ball-width));
+  --shadow-small-offset: calc((var(--ball-width) - var(--shadow-width)) / 2);
+  --shadow-big-offset: calc(200px - var(--shadow-width) - var(--shadow-small-offset));
+  --animation-duration: 3s;
+}
+
+.motion-blur {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+  background-color: beige;
+}
+
+.motion-blur__container {
+  position: relative;
+  width: var(--box-width);
+  aspect-ratio: 1 / 1;
+}
+
+.ball {
+  position: absolute;
+  width: var(--ball-width);
+  aspect-ratio: 1 / 1;
+  background-color: white;
+  border-radius: 50%;
+  animation-timing-function: ease-out;
+  animation-duration: var(--animation-duration);
+  animation-iteration-count: infinite;
+  animation-delay: 50ms;
+}
+
+.ball--1 {
+  top: 0;
+  left: 0;
+  animation-name: ball-1;
+}
+
+.ball--2 {
+  top: var(--ball-offset);
+  left: 0;
+  animation-name: ball-2;
+}
+
+.ball--3 {
+  top: 0;
+  left: var(--ball-offset);
+  animation-name: ball-3;
+}
+
+.shadow {
+  position: absolute;
+  width: var(--shadow-width);
+  aspect-ratio: 1 / 1;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation-timing-function: ease-out;
+  animation-duration: var(--animation-duration);
+  animation-delay: 100ms;
+  animation-iteration-count: infinite;
+}
+
+.shadow--1 {
+  top: var(--shadow-small-offset);
+  left: var(--shadow-small-offset);
+  animation-name: shadow-1;
+}
+
+.shadow--2 {
+  top: var(--shadow-big-offset);
+  left: var(--shadow-small-offset);
+  animation-name: shadow-2;
+}
+
+.shadow--3 {
+  top: var(--shadow-small-offset);
+  left: var(--shadow-big-offset);
+  animation-name: shadow-3;
+}
+
+@keyframes ball-1 {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: var(--ball-offset);
+  }
+  50% {
+    top: var(--ball-offset);
+    left: var(--ball-offset);
+  }
+  75% {
+    top: var(--ball-offset);
+    left: 0;
+  }
+}
+
+@keyframes ball-2 {
+  0% {
+    top: var(--ball-offset);
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: 0;
+  }
+  50% {
+    top: 0;
+    left: var(--ball-offset);
+  }
+  75% {
+    top: var(--ball-offset);
+    left: var(--ball-offset);
+  }
+}
+
+@keyframes ball-3 {
+  0% {
+    top: 0;
+    left: var(--ball-offset);
+  }
+  25% {
+    top: var(--ball-offset);
+    left: var(--ball-offset);
+  }
+  50% {
+    top: var(--ball-offset);
+    left: 0;
+  }
+  75% {
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes shadow-1 {
+  0% {
+    top: var(--shadow-small-offset);
+    left: var(--shadow-small-offset);
+  }
+  25% {
+    top: var(--shadow-small-offset);
+    left: var(--shadow-big-offset);
+  }
+  50% {
+    top: var(--shadow-big-offset);
+    left: var(--shadow-big-offset);
+  }
+  75% {
+    top: var(--shadow-big-offset);
+    left: var(--shadow-small-offset);
+  }
+}
+
+@keyframes shadow-3 {
+  0% {
+    top: var(--shadow-small-offset);
+    left: var(--shadow-big-offset); 
+  }
+  25% {
+    top: var(--shadow-big-offset);
+    left: var(--shadow-big-offset);
+  }
+  50% {
+    top: var(--shadow-big-offset);
+    left: var(--shadow-small-offset);
+  }
+  75% {
+    top: var(--shadow-small-offset);
+    left: var(--shadow-small-offset);
+  }
+}
+
+@keyframes shadow-2 {
+  0% {
+    top: var(--shadow-big-offset);
+    left: var(--shadow-small-offset);
+  }
+  25% {
+    top: var(--shadow-small-offset);
+    left: var(--shadow-small-offset);
+  }
+  50% {
+    top: var(--shadow-small-offset);
+    left: var(--shadow-big-offset);
+  }
+  75% {
+    top: var(--shadow-big-offset);
+    left: var(--shadow-big-offset);
+  }
+}

@@ -1,0 +1,104 @@
+:root {
+  --duration: 400ms;
+}
+
+.form {
+  width: 400px;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.form__title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.form input {
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid lightgray;
+}
+
+.form input.error {
+  border-color: brown;
+}
+
+.form input.error::placeholder {
+  color: brown;
+}
+
+.form__login {
+  margin-bottom: 10px;
+}
+
+.form__password {
+  margin-bottom: 20px;
+}
+
+.form__buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.form__submit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 60px;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  color: white;
+  background-color: royalblue;
+  cursor: pointer;
+  transition-duration: var(--duration);
+}
+
+.form__submit:hover {
+  background-color: hsl(225, 73%, 40%);
+}
+
+.form__submit:disabled {
+  color: gray;
+  background-color: lightgray;
+  cursor: not-allowed;
+}
+
+.form__submit svg {
+  display: none;
+  opacity: 0;
+  color: white;
+  transition: var(--duration);
+}
+
+.form__submit.success {
+  width: 40px;
+  background-color: limegreen;
+}
+
+.form__submit.success svg {
+  display: block;
+  opacity: 1;
+}
+
+.form__submit.success span {
+  display: none;
+}
+
+.form__back {
+  display: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  color: gray;
+  background-color: transparent;
+  cursor: pointer;
+  transition-duration: var(--duration);
+}
+
+.form__back:hover {
+  text-decoration: underline;
+  color: black;
+}

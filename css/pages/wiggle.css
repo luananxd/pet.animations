@@ -1,0 +1,48 @@
+.wiggle {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: aquamarine;
+  border-radius: 10px;
+}
+
+.wiggle__box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  transform: bottom center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 70px;
+  background-color: antiquewhite;
+  border-top: solid 5px teal;
+  animation: 1.2s wiggle ease infinite;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  7% {
+    transform: rotate(-15deg);
+  }
+  15% {
+    transform: rotate(13deg);
+  }
+  25% {
+    transform: rotate(-9deg);
+  }
+  30% {
+    transform: rotate(7deg);
+  }
+  35% {
+    transform: rotate(-4deg);
+  }
+  40% {
+    transform: rotate(0);
+  }
+}

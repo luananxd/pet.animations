@@ -1,0 +1,42 @@
+@import "./main-page.css";
+@import "./pages.css";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --lightgray: #d5d5d5;
+  --violet-light: #6254ff;
+
+  --border-m: 10px;
+  --border-l: 20px;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  color: var(--black);
+}
+
+a:hover {
+  color: var(--violet-light);
+}

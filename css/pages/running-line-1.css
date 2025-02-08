@@ -1,0 +1,35 @@
+:root {
+  --gap: 80px;
+}
+
+.running-line {
+  position: relative;
+  display: flex;
+  gap: var(--gap);
+  width: 100%;
+  padding: 10px 0;
+  border: 1px solid lightgray;
+  overflow: hidden;
+}
+
+.running-line__container {
+  display: flex;
+  gap: var(--gap);
+  width: fit-content;
+  animation: scroll 15s linear infinite;
+}
+
+.running-line__item {
+  font-size: 60px;
+  font-weight: 700;
+  text-wrap: nowrap;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
