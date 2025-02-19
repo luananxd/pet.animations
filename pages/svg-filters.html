@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../css/index.css" rel="stylesheet" />
+    <link href="../css/pages/svg-filters.css" rel="stylesheet" />
+    <title>SVG Filters</title>
+  </head>
+
+  <body class="page">
+    <a href="../index.html" class="page__back">Back</a>
+    <h1 class="main-page__title">SVG Filters</h1>
+
+    <div class="page__content">
+      <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <defs>
+          <filter id="blur">
+            <feGaussianBlur stdDeviation="5" result="BLUR"></feGaussianBlur>
+          </filter>
+
+          <filter id="offset">
+            <feOffset dx="10" dy="-10"></feOffset>
+          </filter>
+
+          <filter id="flood" x="0" y="0" width="200" height="200">
+            <feFlood in="SourceAlpha" flood-color="lime" result="FLOOD"></feFlood>
+          </filter>
+
+          <filter id="colorMatrix">
+            <feColorMatrix
+              type="matrix"
+              values="0 0.5 1 0 0
+                      0 1 0 0 0
+                      1 0 1 0 0
+                      0 0 0 0.5 0
+            "></feColorMatrix>
+          </filter>
+
+          <filter id="blend">
+            <feBlend in2="BackgroundImage" in="SourceGraphic" mode="multiply"></feBlend>
+          </filter>
+
+          <filter id="fbc">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="ALPHA"></feGaussianBlur>
+            <feFlood in="SourceImage" flood-color="lime" result="FLOOD"></feFlood>
+            <feComposite in="FLOOD" in2="ALPHA" operator="in"></feComposite>
+          </filter>
+        </defs>
+      </svg>
+
+      <div class="svg-filters">
+        <div class="image">
+          <img src="../assets/boats.jpg">
+          <span>Normal</span>
+        </div>
+
+        <div class="image">
+          <img src="../assets/boats.jpg">
+          <span>Gaussian blur</span>
+        </div>
+
+        <div class="image">
+          <img src="../assets/boats.jpg">
+          <span>Offset</span>
+        </div>
+
+        <div class="image">
+          <img src="../assets/boats.jpg">
+          <span>Flood</span>
+        </div>
+
+        <div class="image">
+          <img src="../assets/boats.jpg">
+          <span>Color matrix</span>
+        </div>
+
+        <div class="image">
+          <img src="../assets/boats.jpg">
+          <span>Blend</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

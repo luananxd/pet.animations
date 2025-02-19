@@ -1,0 +1,39 @@
+.svg-filters {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  width: 1080px;
+  margin: 0 auto;
+}
+
+.image img {
+  width: 200px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid lightgray;
+}
+
+.image span {
+  font-size: 12px;
+  color: gray;
+}
+
+.image:nth-child(2) img {
+  filter: url(#blur);
+}
+
+.image:nth-child(3) img {
+  filter: url(#offset);
+}
+
+.image:nth-child(4) img {
+  filter: url(#flood);
+}
+
+.image:nth-child(5) img {
+  filter: url(#colorMatrix);
+}
+
+.image:nth-child(6) img {
+  filter: url(#blend);
+}
