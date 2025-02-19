@@ -1,0 +1,8 @@
+{
+  "name": "Animations",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/luananxd/pet.animations.git",
+  "author": "Andrey Luzan <andrejluzan@gmail.com>",
+  "license": "MIT"
+}
