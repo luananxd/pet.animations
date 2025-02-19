@@ -85,6 +85,11 @@ const cards = [
     link: './pages/svg-filters.html',
     tags: ['SVG'],
   },
+  {
+    title: 'Anime.js',
+    link: './pages/anime.html',
+    tags: ['JS', 'Anime.js'],
+  },
 ]
 
 const createTag = (item) => {
